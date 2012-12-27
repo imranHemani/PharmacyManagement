@@ -1,0 +1,19 @@
+
+Validation of String
+
+  private void textBox8_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int x = (int)e.KeyChar;
+            e.Handled = !ValidateAlpha(x);
+        }
+
+        public static bool ValidateAlpha(int keyAscii)
+        {
+            if (keyAscii >= 65 && keyAscii <= 90)
+                return true;
+            else if (keyAscii >= 97 && keyAscii <= 122)
+                return true;
+            else if (keyAscii == 8 || keyAscii == 13)
+                return true;
+            return false;
+        }
